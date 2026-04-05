@@ -5,7 +5,10 @@
 
   inventory.machines = {
     # Define machines here.
-    # jon = { };
+    hydrogen = {
+        # The 'tags' attribute is used to group machines and assign services to them.
+        tags = [ "nixos" "server" ];
+    }
   };
 
   # Docs: See https://docs.clan.lol/services/definition/
@@ -50,9 +53,5 @@
   # Additional NixOS configuration can be added here.
   # machines/jon/configuration.nix will be automatically imported.
   # See: https://docs.clan.lol/guides/inventory/autoincludes/
-  machines = {
-    # jon = { config, ... }: {
-    #   environment.systemPackages = [ pkgs.asciinema ];
-    # };
-  };
+  machines = { };
 }
