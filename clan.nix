@@ -73,7 +73,7 @@
       # Replace with the name (string) of your machine that you will use as zerotier-controller
       # See: https://docs.zerotier.com/controller/
       # Deploy this machine first to create the network secrets
-      roles.controller.machines."__YOUR_CONTROLLER__" = { };
+      roles.controller.machines."hydrogen" = { };
       # Peers of the network
       # tags.all means 'all machines' will joined
       roles.peer.tags.all = { };
