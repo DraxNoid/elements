@@ -8,7 +8,7 @@
     hydrogen = {
         # The 'tags' attribute is used to group machines and assign services to them.
         tags = [ "nixos" "server" ];
-    }
+    };
   };
 
   # Docs: See https://docs.clan.lol/services/definition/
