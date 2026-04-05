@@ -23,7 +23,7 @@
         # Insert the public key that you want to use for SSH access.
         # All keys will have ssh access to all machines ("tags.all" means 'all machines').
         # Alternatively set 'users.users.root.openssh.authorizedKeys.keys' in each machine
-        "admin-machine-1" = "__YOUR_PUBLIC_KEY__";
+        "helium" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINsUtReTMWZdl4M1t9yg1z2aDrhxdqA4phKgWShRp+wx helium";
       };
     };
 
