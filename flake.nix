@@ -1,6 +1,10 @@
 {
   inputs.clan-core.url = "https://git.clan.lol/clan/clan-core/archive/25.11.tar.gz";
   inputs.nixpkgs.follows = "clan-core/nixpkgs";
+  inputs.home-manager = {
+    url = "github:nix-community/home-manager";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   outputs =
     {
