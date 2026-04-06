@@ -32,15 +32,15 @@
         };
     };
 
-    dueterium-user = {
+    deuterium-user = {
         module = {
             name = "users";
             input = "clan-core";
         };
 
-        roles.default.tags.all = { };
+        roles.default.tags = { };
         roles.default.settings = {
-            user = "dueterium";
+            user = "deuterium";
             groups = [
                 "wheel" # This group allows the user to use 'sudo' to execute commands as root.
                 "networkmanager" # This group allows the user to manage network connections using NetworkManager.
