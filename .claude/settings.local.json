@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(clan machines *)",
+      "Bash(clan vars *)",
+      "Bash(nix build *)",
+      "Bash(wait)",
+      "Bash(nix derivation *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(e['urls'][0], '\\\\nsha256:', e['hash']\\) for v in d.values\\(\\) for e in [v.get\\('env',{}\\)] if False] or [print\\(v['env'].get\\('url',''\\), v['env'].get\\('outputHash',''\\)\\) for v in d.values\\(\\)]\")",
+      "Bash(nix eval *)",
+      "WebFetch(domain:clan.lol)"
+    ]
+  }
+}

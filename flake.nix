@@ -1,10 +1,24 @@
 {
-  inputs.clan-core.url = "https://git.clan.lol/clan/clan-core/archive/25.11.tar.gz";
-  inputs.nixpkgs.follows = "clan-core/nixpkgs";
-  inputs.home-manager = {
-    url = "github:nix-community/home-manager";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+	inputs = {
+		nixpkgs.follows = "clan-core/nixpkgs";
+		clan-core = {
+			url = "https://git.clan.lol/clan/clan-core/archive/25.11.tar.gz";
+		};
+		home-manager = {
+			url = "github:nix-community/home-manager/release-25.11";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+		hyprland.url = "github:hyprwm/Hyprland";
+    minegrub-theme.url = "github:Lxtharia/minegrub-theme";
+    catppuccin.url = "github:catppuccin/nix";
+		zen-browser = {
+			url = "github:0xc000022070/zen-browser-flake/beta";
+			inputs ={
+				nixpkgs.follows = "nixpkgs";
+				home-manager.follows = "home-manager";
+			};
+    };
+	};
 
   outputs =
     {
@@ -20,16 +34,10 @@
         imports = [ ./clan.nix ];
         specialArgs = { inherit inputs; };
 
-        # Customize nixpkgs
-        # pkgsForSystem =
-        #   system:
-        #   import nixpkgs {
-        #     inherit system;
-        #     config = {
-        #       allowUnfree = true;
-        #     };
-        #     overlays = [];
-        #   };
+        pkgsForSystem = system: import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
       };
     in
     {

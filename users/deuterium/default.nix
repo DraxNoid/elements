@@ -1,10 +1,6 @@
-{ self, ... }:
+{ ... }:
 {
-  imports = [
-    self.inputs.home-manager.nixosModules.default
-  ];
-
-  home-manager.users.dueterium = {
+  home-manager.users.deuterium = {
     imports = [
       ./home.nix
     ];

@@ -9,24 +9,35 @@
         # The 'tags' attribute is used to group machines and assign services to them.
         tags = [ "nixos" "server" ];
     };
+    helium = {
+        tags = [ "nixos" "desktop" ];
+    };
   };
 
   # Docs: See https://docs.clan.lol/services/definition/
   inventory.instances = {
+    sshd = {
+        module = {
+            name = "users";
+            input = "clan-core";
+        };
+      	roles.server.tags.all = { };
+    };
+
     protium-user = {
         module = {
             name = "users";
             input = "clan-core";
         };
 
-        roles.default.tags.all = { };
+        roles.default.tags.server = { };
         roles.default.settings = {
             user = "protium";
             groups = [
                 "wheel" # This group allows the user to use 'sudo' to execute commands as root.
                 "networkmanager" # This group allows the user to manage network connections using NetworkManager.
                 "video" # This group allows the user to access video devices, which is necessary for using the display server and graphical applications.
-                "audio" # This group allows the user to access audio devices, which is necessary for using sound in graphical applications.
+                "audio4" # This group allows the user to access audio devices, which is necessary for using sound in graphical applications.
                 "docker" # This group allows the user to manage Docker containers, which is necessary for using Docker without root privileges.
             ];
         };
@@ -38,7 +49,7 @@
             input = "clan-core";
         };
 
-        roles.default.tags = { };
+        roles.default.tags.desktop = { };
         roles.default.settings = {
             user = "deuterium";
             groups = [
