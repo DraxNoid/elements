@@ -18,7 +18,7 @@
   inventory.instances = {
     sshd = {
         module = {
-            name = "users";
+            name = "sshd";
             input = "clan-core";
         };
       	roles.server.tags.all = { };
@@ -37,7 +37,7 @@
                 "wheel" # This group allows the user to use 'sudo' to execute commands as root.
                 "networkmanager" # This group allows the user to manage network connections using NetworkManager.
                 "video" # This group allows the user to access video devices, which is necessary for using the display server and graphical applications.
-                "audio4" # This group allows the user to access audio devices, which is necessary for using sound in graphical applications.
+                "audio" # This group allows the user to access audio devices, which is necessary for using sound in graphical applications.
                 "docker" # This group allows the user to manage Docker containers, which is necessary for using Docker without root privileges.
             ];
         };

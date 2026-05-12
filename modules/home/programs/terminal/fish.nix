@@ -9,10 +9,10 @@
         programs.fish = {
             enable = true;
             interactiveShellInit = lib.mkIf config.starship.enable ''
-                starship init fish | direnv hook fish cre| source
+                starship init fish | direnv hook fish | source
             '';                
             shellAliases = {
-                mnt = "cd /run/usedr/$(id -u)/gvfs"; 
+                mnt = "cd /run/user/$(id -u)/gvfs"; 
             };
             functions = {
                 rebuild = ''

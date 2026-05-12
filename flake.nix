@@ -2,10 +2,10 @@
 	inputs = {
 		nixpkgs.follows = "clan-core/nixpkgs";
 		clan-core = {
-			url = "https://git.clan.lol/clan/clan-core/archive/25.11.tar.gz";
+			url = "git+https://git.clan.lol/clan/clan-core";
 		};
 		home-manager = {
-			url = "github:nix-community/home-manager/release-25.11";
+			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		hyprland.url = "github:hyprwm/Hyprland";
